@@ -31,6 +31,8 @@ spec:
           value: 2mL3wkU!
         - name: MONGO_INITDB_ROOT_USERNAME
           value: emma
+        - name: FORCE_RESTART_AT
+          value: ${CICD_GIT_COMMIT}
         image: ccchc/emma-db-mongo:latest
         imagePullPolicy: Always
         name: emma-db-mongo

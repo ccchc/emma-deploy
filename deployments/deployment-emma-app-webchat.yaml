@@ -32,3 +32,6 @@ spec:
           hostPort: 13000
           name: http
           protocol: TCP
+        env:
+        - name: FORCE_RESTART_AT
+          value: ${CICD_GIT_COMMIT}

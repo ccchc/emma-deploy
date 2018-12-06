@@ -33,6 +33,8 @@ spec:
           value: just4n0w
         - name: MYSQL_USER
           value: suchetan
+        - name: FORCE_RESTART_AT
+          value: ${CICD_GIT_COMMIT}
         image: ccchc/emma-db-mysql:latest
         imagePullPolicy: Always
         name: emma-db-mysql

@@ -36,3 +36,6 @@ spec:
           hostPort: 10443
           name: https
           protocol: TCP
+        env:
+        - name: FORCE_RESTART_AT
+          value: ${CICD_GIT_COMMIT}

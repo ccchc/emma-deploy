@@ -31,6 +31,8 @@ spec:
           value: 2mL3wkU!
         - name: REDIS_INITDB_ROOT_USERNAME
           value: emma
+        - name: FORCE_RESTART_AT
+          value: ${CICD_GIT_COMMIT}
         image: ccchc/emma-db-redis:latest
         imagePullPolicy: Always
         name: emma-db-redis

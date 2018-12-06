@@ -1,6 +1,8 @@
 ﻿apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
+  annotations:
+    ccchc.ciCdGitCommit: ${CICD_GIT_COMMIT}
   name: emma-db-redis
   namespace: webchat-test
   labels:

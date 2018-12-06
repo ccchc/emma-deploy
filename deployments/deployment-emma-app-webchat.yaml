@@ -1,6 +1,8 @@
 ﻿apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
+  annotations:
+    ccchc.ciCdGitCommit: ${CICD_GIT_COMMIT}
   labels:
     app.kubernetes.io/instance: emma-app-webchat
     app.kubernetes.io/name: emma-app-webchat

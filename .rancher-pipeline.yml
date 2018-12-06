@@ -1,5 +1,7 @@
 stages:
-  - name: Deploy
-    steps:
-      - applyYamlConfig:
-          path: ./deployment.yaml
+- name: Deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
+  - applyYamlConfig:
+      path: ./deployments/deployment-emma-db-redis.yaml

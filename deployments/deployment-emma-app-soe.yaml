@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - image: ccchc/emma-app-soe:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         name: emma-app-soe
         ports:
         - containerPort: 9080

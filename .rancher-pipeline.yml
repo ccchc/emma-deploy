@@ -2,6 +2,12 @@ stages:
 - name: Deploy
   steps:
   - applyYamlConfig:
-      path: ./deployment.yaml
-  - applyYamlConfig:
       path: ./deployments/deployment-emma-db-redis.yaml
+  - applyYamlConfig:
+      path: ./deployments/deployment-emma-db-mongo.yaml
+  - applyYamlConfig:
+      path: ./deployments/deployment-emma-db-mysql.yaml
+  - applyYamlConfig:
+      path: ./deployments/deployment-emma-app-soe.yaml
+  - applyYamlConfig:
+      path: ./deployments/deployment-emma-app-webchat.yaml

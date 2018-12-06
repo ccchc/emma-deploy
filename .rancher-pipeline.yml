@@ -13,4 +13,4 @@ stages:
       path: ./deployments/deployment-emma-app-webchat.yaml
   - runScriptConfig:
       image: busybox
-      shellScript: curl -X POST -H 'Content-type: application/json' --data \"{\"text\":\"New build ${CICD_GIT_COMMIT} deployed at: https://webchat.test.wa4hb.com/\"}\" https://hooks.slack.com/services/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
+      shellScript: 'curl -X POST -H ''Content-type: application/json'' --data ''{"text":"New automated build deployed at: https://webchat.test.wa4hb.com/"}'' https://hooks.slack.com/services/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'

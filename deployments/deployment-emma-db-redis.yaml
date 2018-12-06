@@ -12,6 +12,9 @@ spec:
     matchLabels:
       app.kubernetes.io/instance: emma-db-redis
       app.kubernetes.io/name: emma-db-redis
+  strategy:
+    type: Recreate
+    rollingUpdate: null
   template:
     metadata:
       labels:

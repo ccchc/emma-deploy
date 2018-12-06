@@ -12,6 +12,9 @@ spec:
     matchLabels:
       app.kubernetes.io/instance: emma-db-mongo
       app.kubernetes.io/name: emma-db-mongo
+  strategy:
+    type: Recreate
+    rollingUpdate: null
   template:
     metadata:
       labels:

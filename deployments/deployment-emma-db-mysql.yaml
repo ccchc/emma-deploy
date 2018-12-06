@@ -13,6 +13,8 @@ spec:
       app.kubernetes.io/instance: emma-db-mysql
       app.kubernetes.io/name: emma-db-mysql
   strategy:
+    type: Recreate
+    rollingUpdate: null
   template:
     metadata:
       labels:

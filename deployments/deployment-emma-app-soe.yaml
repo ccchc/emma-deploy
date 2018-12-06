@@ -12,6 +12,8 @@ spec:
     matchLabels:
       app.kubernetes.io/instance: emma-app-soe
       app.kubernetes.io/name: emma-app-soe
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:

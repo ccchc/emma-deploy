@@ -12,6 +12,8 @@ spec:
     matchLabels:
       app.kubernetes.io/instance: emma-app-webchat
       app.kubernetes.io/name: emma-app-webchat
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:

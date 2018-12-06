@@ -11,3 +11,7 @@ stages:
       path: ./deployments/deployment-emma-app-soe.yaml
   - applyYamlConfig:
       path: ./deployments/deployment-emma-app-webchat.yaml
+  - runScriptConfig:
+      image: byrnedo/alpine-curl
+      shellScript: 'curl -X POST -H ''Content-type: application/json'' --data ''{"text":"New
+        automated build deployed"}'' https://hooks.slack.com/services/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'

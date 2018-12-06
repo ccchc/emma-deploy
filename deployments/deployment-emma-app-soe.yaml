@@ -1,0 +1,33 @@
+﻿apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/instance: emma-app-soe
+    app.kubernetes.io/name: emma-app-soe
+  name: emma-app-soe
+  namespace: webchat-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: emma-app-soe
+      app.kubernetes.io/name: emma-app-soe
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: emma-app-soe
+        app.kubernetes.io/name: emma-app-soe
+    spec:
+      containers:
+      - image: ccchc/emma-app-soe:latest
+        imagePullPolicy: IfNotPresent
+        name: emma-app-soe
+        ports:
+        - containerPort: 9080
+          hostPort: 10080
+          name: http
+          protocol: TCP
+        - containerPort: 9443
+          hostPort: 10443
+          name: https
+          protocol: TCP

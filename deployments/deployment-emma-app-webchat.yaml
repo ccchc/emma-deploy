@@ -1,0 +1,29 @@
+﻿apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/instance: emma-app-webchat
+    app.kubernetes.io/name: emma-app-webchat
+  name: emma-app-webchat
+  namespace: webchat-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: emma-app-webchat
+      app.kubernetes.io/name: emma-app-webchat
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: emma-app-webchat
+        app.kubernetes.io/name: emma-app-webchat
+    spec:
+      containers:
+      - image: ccchc/emma-app-webchat:latest
+        imagePullPolicy: Always
+        name: emma-app-webchat
+        ports:
+        - containerPort: 3000
+          hostPort: 13000
+          name: http
+          protocol: TCP

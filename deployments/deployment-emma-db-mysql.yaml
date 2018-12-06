@@ -1,0 +1,34 @@
+﻿apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/instance: emma-db-mysql
+    app.kubernetes.io/name: emma-db-mysql
+  name: emma-db-mysql
+  namespace: webchat-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: emma-db-mysql
+      app.kubernetes.io/name: emma-db-mysql
+  strategy:
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: emma-db-mysql
+        app.kubernetes.io/name: emma-db-mysql
+    spec:
+      containers:
+      - env:
+        - name: MYSQL_DATABASE
+          value: AETNADB
+        - name: MYSQL_PASSWORD
+          value: just4n0w
+        - name: MYSQL_ROOT_PASSWORD
+          value: just4n0w
+        - name: MYSQL_USER
+          value: suchetan
+        image: ccchc/emma-db-mysql:latest
+        imagePullPolicy: Always
+        name: emma-db-mysql

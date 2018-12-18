@@ -27,11 +27,9 @@ spec:
         name: emma-app-soe
         ports:
         - containerPort: 9080
-          hostPort: 10080
           name: http
           protocol: TCP
         - containerPort: 9443
-          hostPort: 10443
           name: https
           protocol: TCP
         env:

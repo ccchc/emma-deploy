@@ -27,7 +27,6 @@ spec:
         name: emma-app-webchat
         ports:
         - containerPort: 3000
-          hostPort: 13000
           name: http
           protocol: TCP
         env:

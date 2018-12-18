@@ -4,16 +4,14 @@ metadata:
   annotations:
     ccchc.ciCdGitCommit: ${CICD_GIT_COMMIT}
   labels:
-    app.kubernetes.io/instance: emma-app-soe
-    app.kubernetes.io/name: emma-app-soe
+    workload.user.cattle.io/workloadselector: deployment-webchat-test-emma-app-soe
   name: emma-app-soe
   namespace: webchat-test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/instance: emma-app-soe
-      app.kubernetes.io/name: emma-app-soe
+      workload.user.cattle.io/workloadselector: deployment-webchat-test-emma-app-soe
   strategy:
     type: Recreate
     rollingUpdate: null

@@ -4,16 +4,14 @@ metadata:
   annotations:
     ccchc.ciCdGitCommit: ${CICD_GIT_COMMIT}
   labels:
-    app.kubernetes.io/instance: emma-db-mysql
-    app.kubernetes.io/name: emma-db-mysql
+    workload.user.cattle.io/workloadselector: deployment-webchat-test-emma-db-mysql
   name: emma-db-mysql
   namespace: webchat-test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/instance: emma-db-mysql
-      app.kubernetes.io/name: emma-db-mysql
+      workload.user.cattle.io/workloadselector: deployment-webchat-test-emma-db-mysql
   strategy:
     type: Recreate
     rollingUpdate: null

@@ -6,14 +6,12 @@ metadata:
   name: emma-db-redis
   namespace: webchat-test
   labels:
-    app.kubernetes.io/instance: emma-db-mongo
-    app.kubernetes.io/name: emma-db-mongo
+    workload.user.cattle.io/workloadselector: deployment-webchat-test-emma-db-redis
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/instance: emma-db-redis
-      app.kubernetes.io/name: emma-db-redis
+      workload.user.cattle.io/workloadselector: deployment-webchat-test-emma-db-redis
   strategy:
     type: Recreate
     rollingUpdate: null
